@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Nwn Admin</string>
+    <string name="api_endpoint">http://92.222.71.56:39817/nwn/api/</string>
+</resources>
