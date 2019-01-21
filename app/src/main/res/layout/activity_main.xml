@@ -25,15 +25,14 @@
     <fragment
             android:id="@+id/nav_host"
             android:layout_width="match_parent"
-            android:layout_height="515dp"
+            android:layout_height="match_parent"
             android:name="androidx.navigation.fragment.NavHostFragment"
             app:navGraph="@navigation/navigation_main_graph"
             app:defaultNavHost="true"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.287"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginTop="?attr/actionBarSize"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 

@@ -28,11 +28,15 @@ class AdapterCharacter(
         presenter.displayCharacter(position, holder)
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), CharacterView {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), CharacterView {
         lateinit var binder: AdapterCharacterListBinding
 
         override fun bindCharacter(character: PlayerCharacter) {
             binder.character = character
+        }
+
+        override fun setOnCharacterClickListener(position: Int) {
+            itemView.setOnClickListener{ presenter.clickCharacter(position) }
         }
     }
 }

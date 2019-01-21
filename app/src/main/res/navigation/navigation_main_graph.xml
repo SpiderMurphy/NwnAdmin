@@ -4,5 +4,13 @@
             android:id="@+id/navigation_main_graph" app:startDestination="@id/characterListFragment">
 
     <fragment android:id="@+id/characterListFragment" android:name="cyan.com.nwnadmin.characters.CharacterListFragment"
-              android:label="CharacterListFragment"/>
+              android:label="CharacterListFragment">
+        <action android:id="@+id/action_characterListFragment_to_characterDetailFragment"
+                app:destination="@id/characterDetailFragment" app:launchSingleTop="true"/>
+    </fragment>
+    <fragment android:id="@+id/characterDetailFragment"
+              android:name="cyan.com.nwnadmin.characters.details.CharacterDetailFragment"
+              android:label="CharacterDetailFragment">
+        <argument android:name="character" app:argType="cyan.com.nwnadmin.model.data.PlayerCharacter"/>
+    </fragment>
 </navigation>

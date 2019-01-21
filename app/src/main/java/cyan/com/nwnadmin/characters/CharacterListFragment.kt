@@ -1,12 +1,15 @@
 package cyan.com.nwnadmin.characters
 
 import android.os.Bundle
+import android.support.v7.widget.DividerItemDecoration
+import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
 import android.view.View
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
+import androidx.navigation.fragment.findNavController
 import cyan.com.nwnadmin.R
 import cyan.com.nwnadmin.adapter.character.AdapterCharacter
 import cyan.com.nwnadmin.adapter.character.CharacterPresenterImpl
@@ -35,14 +38,20 @@ class CharacterListFragment : DaggerFragment(), CharacterListView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (view as RecyclerView).addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         presenter.viewReady()
     }
 
     override fun onFetchCharacter(characters: List<PlayerCharacter>?) {
         characters?.let {
-            val adapter = AdapterCharacter(CharacterPresenterImpl(it))
+            val adapter = AdapterCharacter(CharacterPresenterImpl(this, it))
             rwCharacters.adapter = adapter
         }
+    }
+
+    override fun onClickCharacter(character: PlayerCharacter) {
+        val action = CharacterListFragmentDirections.actionCharacterListFragmentToCharacterDetailFragment(character)
+        findNavController().navigate(action)
     }
 
     private fun setMenuOptions(menu: Menu?) {
