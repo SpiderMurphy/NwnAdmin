@@ -24,7 +24,11 @@ class CharacterListPresenterImpl(
     }
 
     override fun fetchCharactersByCdKey(cdkey: String?) {
-        TODO("not implemented") // To change body of created functions use File | Settings | File Templates.
+        disposable.add(
+            model.fetchCharacterByCdkey(cdkey = cdkey.orEmpty())
+                .subscribe({ characters -> view?.onFetchCharacter(characters = characters) },
+                    { error -> Log.w("Characters error", error.localizedMessage) })
+        )
     }
 
     override fun fetchCharactersByUsername(username: String?) {

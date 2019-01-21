@@ -40,7 +40,7 @@ class CharacterListFragment : DaggerFragment(), CharacterListView {
 
     override fun onFetchCharacter(characters: List<PlayerCharacter>?) {
         characters?.let {
-            val adapter = AdapterCharacter(CharacterPresenterImpl(characters))
+            val adapter = AdapterCharacter(CharacterPresenterImpl(it))
             rwCharacters.adapter = adapter
         }
     }

@@ -1,7 +1,5 @@
 package cyan.com.nwnadmin.main
 
-import com.nhaarman.mockitokotlin2.argumentCaptor
-import com.nhaarman.mockitokotlin2.verify
 import cyan.com.nwnadmin.main.utils.ExecutorServiceSyncTest
 import cyan.com.nwnadmin.model.Repository
 import cyan.com.nwnadmin.model.data.PlayerCharacter
@@ -9,10 +7,8 @@ import io.reactivex.Single
 import io.reactivex.schedulers.TestScheduler
 import org.junit.Before
 import org.junit.BeforeClass
-import org.junit.Test
 import org.mockito.Mockito
 import org.mockito.Mockito.mock
-import kotlin.test.assertEquals
 
 class MainPresenterTest {
     lateinit var view: MainView
@@ -55,14 +51,5 @@ class MainPresenterTest {
     fun setupTest() {
         view = Mockito.mock(MainView::class.java)
         presenter = MainPresenterImpl(view, model)
-    }
-
-    @Test
-    fun fetchCharactersTest_with1Character_fetched() {
-       /* val captor = argumentCaptor<List<PlayerCharacter>>()
-        presenter.fetchCharacters()
-        testScheduler.triggerActions()
-        verify(view).onFetchCharacter(captor.capture())
-        assertEquals("test", captor.firstValue[0].username)*/
     }
 }
