@@ -36,7 +36,7 @@ class AdapterCharacter(
         }
 
         override fun setOnCharacterClickListener(position: Int) {
-            itemView.setOnClickListener{ presenter.clickCharacter(position) }
+            itemView.setOnClickListener { presenter.clickCharacter(position) }
         }
     }
 }
