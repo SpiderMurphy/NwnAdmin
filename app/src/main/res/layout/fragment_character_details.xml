@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="character"
+                  type="cyan.com.nwnadmin.model.data.PlayerCharacter" />
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:id="@+id/portraitImageView"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="248dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:layout_marginBottom="32dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/po_hu_m_99_h"/>
+
+                <TextView
+                        android:text="@string/account"
+                        style="@style/NwnAdmin_CharacterDetail_Caption" />
+
+                <TextView
+                        android:id="@+id/accountNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/black"
+                        android:text="@{ character.username }"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+                <View   android:background="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:alpha="0.27"/>
+
+                <TextView
+                        android:text="@string/name"
+                        style="@style/NwnAdmin_CharacterDetail_Caption" />
+
+                <TextView
+                        android:id="@+id/nameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/black"
+                        android:text="@{ character.name }"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+                <View   android:background="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:alpha="0.27"/>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,4 +1,5 @@
 package cyan.com.nwnadmin.characters.details
 
-interface CharacterDetailPresenter {
-}
+import cyan.com.nwnadmin.mvp.BasePresenter
+
+interface CharacterDetailPresenter : BasePresenter

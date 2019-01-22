@@ -6,4 +6,11 @@ class CharacterDetailPresenterImpl(
     private var view: CharacterDetailView?,
     private val character: PlayerCharacter
 ) : CharacterDetailPresenter {
+    override fun viewReady() {
+        view?.onDisplayCharacter(character)
+    }
+
+    override fun destroy() {
+        view = null
+    }
 }
