@@ -3,13 +3,10 @@ package cyan.com.nwnadmin.characters.details
 import cyan.com.nwnadmin.model.data.PlayerCharacter
 import io.mockk.CapturingSlot
 import io.mockk.MockKAnnotations
-import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK
 import io.mockk.verify
 import org.junit.Before
 import org.junit.Test
-
-import org.junit.Assert.*
 
 class CharacterDetailPresenterImplTest {
     @RelaxedMockK

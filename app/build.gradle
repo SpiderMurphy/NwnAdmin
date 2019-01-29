@@ -26,6 +26,9 @@ android {
     kapt {
         generateStubs true
     }
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {
@@ -41,7 +44,7 @@ dependencies {
     def mockito_kotlin_version = '2.1.0'
     def kluent_version = '1.45'
     def glide_version = '4.8.0'
-    def nav_version = "1.0.0-alpha09"
+    def nav_version = "1.0.0-alpha11"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
